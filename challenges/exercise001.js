@@ -6,34 +6,50 @@ function capitalize(word) {
 function generateInitials(firstName, lastName) {
   if (firstName === undefined) throw new Error("firstName is required");
   if (lastName === undefined) throw new Error("lastName is required");
-  // Add your code here!
+  return firstName.substring(0,1)+"."+lastName.substring(0,1);
 }
 
 function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
-  // Add your code here!
+  return originalPrice+((vatRate/100)*originalPrice);
 }
 
 function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
-  // Add your code here!
+  return originalPrice-((reduction/100)*originalPrice);
 }
 
 function getMiddleCharacter(str) {
   if (str === undefined) throw new Error("str is required");
-  // Add your code here!
+ 
+  var position;
+  var length;
+
+  if(str.length % 2 == 1) {
+      position = str.length / 2;
+      length = 1;
+  } else {
+      position = str.length / 2 - 1;
+      length = 2;
+  }
+
+  return str.substring(position, position + length);
 }
 
 function reverseWord(word) {
   if (word === undefined) throw new Error("word is required");
-  // Add your code here!
+  return word.split("").reverse().join("");
 }
 
 function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
-  // Add your code here!
+ var i;
+ for(i=0;i<words.length;i++){
+   words[i]=words[i].split("").reverse().join("");
+ }
+ return words;
 }
 
 function countLinuxUsers(users) {
